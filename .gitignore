@@ -1,0 +1,7 @@
+.settings
+.project
+.classpath
+build/
+/bin/
+src/main/webapp/WEB-INF/lib/
+context.xml
