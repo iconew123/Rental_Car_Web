@@ -1,0 +1,144 @@
+.board-section {
+	margin: auto; max-width : 700px;
+	border: 1px solid #e0e0e0;
+	border-radius: 8px;
+	box-shadow: 0 4px 6px rgba(243, 208, 215, 0.5);
+	background-color: rgb(246, 245, 242);
+	padding: 20px;
+	margin-bottom: 20px;
+	max-width: 700px;
+}
+
+.board-section h3 {
+	font-size: 18px;
+	margin: 0;
+}
+
+.board-section h3 span {
+	margin-right: 10px;
+}
+
+.board-section p {
+	margin: 5px 0;
+}
+
+.board-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.board-item {
+	display: none;
+}
+
+.s {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	margin: auto;
+}
+
+.s button{
+	width : 70px;
+}
+
+.s select,
+.s button {
+    height: 50px;
+    margin-right: 10px;
+}
+
+
+button.btn {
+	background-color: rgb(243, 208, 215);
+	color: white;
+	border: none;
+	padding: 8px 12px;
+	cursor: pointer;
+	border-radius: 4px;
+}
+
+button.btn:hover {
+	background-color: #0056b3;
+}
+
+#btnWrap {
+	width: 500px;
+	margin: 100px auto;
+}
+
+.modalWrap {
+	position: fixed;
+	z-index: 1;
+	padding-top: 100px;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0, 0, 0, 0.7);
+	display: none;
+}
+
+.modalBody {
+	width: auto;
+	height: auto;
+	padding: 30px 30px;
+	margin: 0 auto;
+	border: 1px solid #777;
+	background-color: #fff;
+}
+
+.closeBtn {
+	float: right;
+	font-weight: bold;
+	color: #777;
+	font-size: 25px;
+	cursor: pointer;
+}
+
+<!--
+-->
+.board-card {
+	border: 1px solid #e0e0e0;
+	border-radius: 8px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	background-color: #ffffff;
+	padding: 20px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.board-header h3 {
+	margin-top: 0;
+	margin-bottom: 5px;
+	font-size: 20px;
+	color: #333333;
+}
+
+.board-meta {
+	margin-bottom: 10px;
+}
+
+.board-meta-item {
+	margin-right: 10px;
+	font-size: 14px;
+	color: #666666;
+}
+
+.board-body {
+	border-top: 1px solid #e0e0e0;
+	padding-top: 10px;
+}
+
+.board-type {
+	margin-bottom: 10px;
+	font-size: 16px;
+	color: #333333;
+}
+
+.board-dates {
+	font-size: 14px;
+	color: #666666;
+}
