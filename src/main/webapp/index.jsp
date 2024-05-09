@@ -25,6 +25,6 @@
 		<p>선택한 기간:</p>
 		<p id="result"></p>
 	</div>
-	<script src="/resources/script/k.js"></script>
+	<script src="k.js"></script>
 </body>
 </html>

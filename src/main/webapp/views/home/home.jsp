@@ -3,12 +3,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>Rental Car Web</title>
 </head>
 <jsp:include page="/header"></jsp:include>
 <body>
 		
-</body>
+</body>	
 <jsp:include page="/footer"></jsp:include>
 </html>

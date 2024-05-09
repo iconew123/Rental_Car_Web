@@ -5,12 +5,7 @@
 	version="4.0">
 	<display-name>rental-car-server</display-name>
 	<welcome-file-list>
-		<welcome-file>index.html</welcome-file>
-		<welcome-file>index.htm</welcome-file>
-		<welcome-file>index.jsp</welcome-file>
-		<welcome-file>default.html</welcome-file>
-		<welcome-file>default.htm</welcome-file>
-		<welcome-file>default.jsp</welcome-file>
+		<welcome-file>/views/home/home.jsp</welcome-file>
 	</welcome-file-list>
 
 	<!-- -->
@@ -76,14 +71,23 @@
 		<servlet-name>updateUserForm</servlet-name>
 		<url-pattern>/updateUserForm</url-pattern>
 	</servlet-mapping>
-	
-		<servlet>
+
+	<servlet>
 		<servlet-name>deleteForm</servlet-name>
 		<jsp-file>/views/user/deleteForm.jsp</jsp-file>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>deleteForm</servlet-name>
 		<url-pattern>/deleteForm</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>board</servlet-name>
+		<jsp-file>/views/board/board.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>board</servlet-name>
+		<url-pattern>/boardlist</url-pattern>
 	</servlet-mapping>
 
 	<!-- Servlet Mapping -->
@@ -132,4 +136,48 @@
 		<url-pattern>/deleteFormAction</url-pattern>
 	</servlet-mapping>
 
+	<servlet>
+		<servlet-name>BoardListAction</servlet-name>
+		<servlet-class>rentalServer.board.controller.BoardListAction</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>BoardListAction</servlet-name>
+		<url-pattern>/board</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>FindBoardList</servlet-name>
+		<servlet-class>rentalServer.board.controller.FindBoardList</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>FindBoardList</servlet-name>
+		<url-pattern>/FindBoardList</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>CreateBoardAction</servlet-name>
+		<servlet-class>rentalServer.board.controller.CreateBoardAction</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CreateBoardAction</servlet-name>
+		<url-pattern>/CreateBoardAction</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>UpdateBoardAction</servlet-name>
+		<servlet-class>rentalServer.board.controller.UpdateBoardAction</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UpdateBoardAction</servlet-name>
+		<url-pattern>/UpdateBoardAction</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>DeleteBoardAction</servlet-name>
+		<servlet-class>rentalServer.board.controller.DeleteBoardAction</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DeleteBoardAction</servlet-name>
+		<url-pattern>/DeleteBoardAction</url-pattern>
+	</servlet-mapping>
 </web-app>
