@@ -21,6 +21,7 @@ public class FindBoardList extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		BoardDao boardDao = BoardDao.getInstance();
 		String type = request.getParameter("type");
+		System.out.println(type);
 		
 		List<BoardResponseDto> list = boardDao.findBoard(type);
 		request.setAttribute("boardList", list);

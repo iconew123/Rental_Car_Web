@@ -15,9 +15,9 @@
 <body>
 	<header>
 		<nav id="nav2">
-			<a href="/home">logo</a>
+			<a href="/RandomCarList">logo</a>
 			<ul>
-				<li><a href="#">렌트카</a></li>
+				<li><a href="/car">렌트카</a></li>
 				<li><a href="/board">게시판</a></li>
 				<c:choose>
 					<c:when test="${user == null }">

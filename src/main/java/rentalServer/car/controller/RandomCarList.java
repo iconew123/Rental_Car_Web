@@ -1,23 +1,27 @@
-package rentalServer.user.controller;
+package rentalServer.car.controller;
 
 import java.io.IOException;
+import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+
+import rentalServer.car.model.CarDao;
+import rentalServer.car.model.CarResponseDto;
 
 /**
- * Servlet implementation class logoutFormAction
+ * Servlet implementation class RandomCarList
  */
-public class logoutFormAction extends HttpServlet {
+public class RandomCarList extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public logoutFormAction() {
+    public RandomCarList() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -26,9 +30,12 @@ public class logoutFormAction extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		HttpSession session = request.getSession();
-		session.removeAttribute("user");
-		response.sendRedirect("/RandomCarList");
+		CarDao carDao = CarDao.getInstance();
+		
+		List<CarResponseDto> list = carDao.randomCarList();
+		request.setAttribute("randomCarList", list);
+		
+		request.getRequestDispatcher("/home").forward(request, response);
 	}
 
 	/**

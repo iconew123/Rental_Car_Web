@@ -4,8 +4,9 @@
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
 	version="4.0">
 	<display-name>rental-car-server</display-name>
+	<!--/views/home/home.jsp -->
 	<welcome-file-list>
-		<welcome-file>/views/home/home.jsp</welcome-file>
+		<welcome-file>RandomCarList</welcome-file>
 	</welcome-file-list>
 
 	<!-- -->
@@ -90,6 +91,33 @@
 		<url-pattern>/boardlist</url-pattern>
 	</servlet-mapping>
 
+	<servlet>
+		<servlet-name>carInfo</servlet-name>
+		<jsp-file>/views/car/carInfo.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>carInfo</servlet-name>
+		<url-pattern>/carInfo</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>car</servlet-name>
+		<jsp-file>/views/car/car.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>car</servlet-name>
+		<url-pattern>/carlist</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>errorLogin</servlet-name>
+		<jsp-file>/views/error/errorPageLogin.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>errorLogin</servlet-name>
+		<url-pattern>/errorPageLogin</url-pattern>
+	</servlet-mapping>
+
 	<!-- Servlet Mapping -->
 	<servlet>
 		<servlet-name>joinFormAction</servlet-name>
@@ -171,7 +199,7 @@
 		<servlet-name>UpdateBoardAction</servlet-name>
 		<url-pattern>/UpdateBoardAction</url-pattern>
 	</servlet-mapping>
-	
+
 	<servlet>
 		<servlet-name>DeleteBoardAction</servlet-name>
 		<servlet-class>rentalServer.board.controller.DeleteBoardAction</servlet-class>
@@ -179,5 +207,41 @@
 	<servlet-mapping>
 		<servlet-name>DeleteBoardAction</servlet-name>
 		<url-pattern>/DeleteBoardAction</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>CarListAction</servlet-name>
+		<servlet-class>rentalServer.car.controller.CarListAction</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CarListAction</servlet-name>
+		<url-pattern>/car</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>RandomCarList</servlet-name>
+		<servlet-class>rentalServer.car.controller.RandomCarList</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>RandomCarList</servlet-name>
+		<url-pattern>/RandomCarList</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>CarInfoByCarNum</servlet-name>
+		<servlet-class>rentalServer.car.controller.CarInfoByCarNum</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CarInfoByCarNum</servlet-name>
+		<url-pattern>/CarInfoByCarNum</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>FindCarList</servlet-name>
+		<servlet-class>rentalServer.car.controller.FindCarList</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>FindCarList</servlet-name>
+		<url-pattern>/FindCarList</url-pattern>
 	</servlet-mapping>
 </web-app>

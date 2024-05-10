@@ -1,4 +1,4 @@
-package rentalServer.user.controller;
+package rentalServer.car.controller;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -6,18 +6,22 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+
+import org.apache.catalina.User;
+
+import rentalServer.car.model.CarDao;
+import rentalServer.car.model.CarResponseDto;
 
 /**
- * Servlet implementation class logoutFormAction
+ * Servlet implementation class CarInfoByCarNum
  */
-public class logoutFormAction extends HttpServlet {
+public class CarInfoByCarNum extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public logoutFormAction() {
+    public CarInfoByCarNum() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -26,17 +30,28 @@ public class logoutFormAction extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		HttpSession session = request.getSession();
-		session.removeAttribute("user");
-		response.sendRedirect("/RandomCarList");
+		CarDao carDao = CarDao.getInstance();
+		int code = Integer.parseInt(request.getParameter("code"));
+		String id = request.getParameter("user");
+
+		if(id.equals("")) {
+			System.out.println("비로그인");
+			response.sendRedirect("/errorPageLogin");
+		}else {
+			System.out.println("로그인");
+			CarResponseDto carInfo = carDao.carInfoByCode(code);
+			request.setAttribute("carInfo", carInfo);
+			
+			request.getRequestDispatcher("/carInfo").forward(request, response);
+		}
+		
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		
 	}
 
 }

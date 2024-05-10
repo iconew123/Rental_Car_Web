@@ -64,7 +64,16 @@ public class BoardDao {
 
 		try {
 			conn = DBManager.getConnection();
-			String sql = "SELECT * FROM boards WHERE type=?";
+
+			String sql = "";
+			if (tp == null) {
+				tp = "%글";
+				sql = "SELECT * FROM boards WHERE type LIKE ?;";
+			}
+			else
+				sql = "SELECT * FROM boards WHERE type=?";
+				
+
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, tp);
 
@@ -220,10 +229,10 @@ public class BoardDao {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, id);
 			pstmt.setInt(2, num);
-			
+
 			int result = pstmt.executeUpdate();
-			
-			if(result == 0)
+
+			if (result == 0)
 				return false;
 			else
 				return true;
