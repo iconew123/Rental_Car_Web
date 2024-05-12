@@ -1,12 +1,322 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" version="4.0">
-  <display-name>rental-car-server</display-name>
-  <welcome-file-list>
-    <welcome-file>index.html</welcome-file>
-    <welcome-file>index.htm</welcome-file>
-    <welcome-file>index.jsp</welcome-file>
-    <welcome-file>default.html</welcome-file>
-    <welcome-file>default.htm</welcome-file>
-    <welcome-file>default.jsp</welcome-file>
-  </welcome-file-list>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+	version="4.0">
+	<display-name>rental-car-server</display-name>
+	<!--/views/home/home.jsp -->
+	<welcome-file-list>
+		<welcome-file>RandomCarList</welcome-file>
+	</welcome-file-list>
+
+	<!-- -->
+	<servlet>
+		<servlet-name>home</servlet-name>
+		<jsp-file>/views/home/home.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>home</servlet-name>
+		<url-pattern>/home</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>header</servlet-name>
+		<jsp-file>/views/module/header.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>header</servlet-name>
+		<url-pattern>/header</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>footer</servlet-name>
+		<jsp-file>/views/module/footer.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>footer</servlet-name>
+		<url-pattern>/footer</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>joinForm</servlet-name>
+		<jsp-file>/views/user/joinForm.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>joinForm</servlet-name>
+		<url-pattern>/joinForm</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>loginForm</servlet-name>
+		<jsp-file>/views/user/loginForm.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>loginForm</servlet-name>
+		<url-pattern>/loginForm</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>myPage</servlet-name>
+		<jsp-file>/views/user/myPageForm.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>myPage</servlet-name>
+		<url-pattern>/myPage</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>updateUserForm</servlet-name>
+		<jsp-file>/views/user/updateUserForm.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>updateUserForm</servlet-name>
+		<url-pattern>/updateUserForm</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>deleteForm</servlet-name>
+		<jsp-file>/views/user/deleteForm.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>deleteForm</servlet-name>
+		<url-pattern>/deleteForm</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>board</servlet-name>
+		<jsp-file>/views/board/board.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>board</servlet-name>
+		<url-pattern>/boardlist</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>carInfo</servlet-name>
+		<jsp-file>/views/car/carInfo.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>carInfo</servlet-name>
+		<url-pattern>/carInfo</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>car</servlet-name>
+		<jsp-file>/views/car/car.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>car</servlet-name>
+		<url-pattern>/carlist</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>updateCar</servlet-name>
+		<jsp-file>/views/car/updateCar.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>updateCar</servlet-name>
+		<url-pattern>/updateCar</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>errorLogin</servlet-name>
+		<jsp-file>/views/error/errorPageLogin.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>errorLogin</servlet-name>
+		<url-pattern>/errorPageLogin</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>errorFailRes</servlet-name>
+		<jsp-file>/views/error/errorFailRes.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>errorFailRes</servlet-name>
+		<url-pattern>/errorFailRes</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>errLoadMyPage</servlet-name>
+		<jsp-file>/views/error/errLoadMyPage.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>errLoadMyPage</servlet-name>
+		<url-pattern>/errLoadMyPage</url-pattern>
+	</servlet-mapping>
+
+
+
+	<!-- Servlet Mapping -->
+	<servlet>
+		<servlet-name>joinFormAction</servlet-name>
+		<servlet-class>rentalServer.user.controller.joinFormAction</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>joinFormAction</servlet-name>
+		<url-pattern>/joinFormAction</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>loginFormAction</servlet-name>
+		<servlet-class>rentalServer.user.controller.loginFormAction</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>loginFormAction</servlet-name>
+		<url-pattern>/loginFormAction</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>logoutFormAction</servlet-name>
+		<servlet-class>rentalServer.user.controller.logoutFormAction</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>logoutFormAction</servlet-name>
+		<url-pattern>/logoutFormAction</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>updateFormAction</servlet-name>
+		<servlet-class>rentalServer.user.controller.updateFormAction</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>updateFormAction</servlet-name>
+		<url-pattern>/updateFormAction</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>deleteFormAction</servlet-name>
+		<servlet-class>rentalServer.user.controller.deleteFormAction</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>deleteFormAction</servlet-name>
+		<url-pattern>/deleteFormAction</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>MyPageAction</servlet-name>
+		<servlet-class>rentalServer.user.controller.MyPageAction</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>MyPageAction</servlet-name>
+		<url-pattern>/MyPageAction</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>BoardListAction</servlet-name>
+		<servlet-class>rentalServer.board.controller.BoardListAction</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>BoardListAction</servlet-name>
+		<url-pattern>/board</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>FindBoardList</servlet-name>
+		<servlet-class>rentalServer.board.controller.FindBoardList</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>FindBoardList</servlet-name>
+		<url-pattern>/FindBoardList</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>CreateBoardAction</servlet-name>
+		<servlet-class>rentalServer.board.controller.CreateBoardAction</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CreateBoardAction</servlet-name>
+		<url-pattern>/CreateBoardAction</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>UpdateBoardAction</servlet-name>
+		<servlet-class>rentalServer.board.controller.UpdateBoardAction</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UpdateBoardAction</servlet-name>
+		<url-pattern>/UpdateBoardAction</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>DeleteBoardAction</servlet-name>
+		<servlet-class>rentalServer.board.controller.DeleteBoardAction</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DeleteBoardAction</servlet-name>
+		<url-pattern>/DeleteBoardAction</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>CarListAction</servlet-name>
+		<servlet-class>rentalServer.car.controller.CarListAction</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CarListAction</servlet-name>
+		<url-pattern>/car</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>RandomCarList</servlet-name>
+		<servlet-class>rentalServer.car.controller.RandomCarList</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>RandomCarList</servlet-name>
+		<url-pattern>/RandomCarList</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>CarInfoByCarNum</servlet-name>
+		<servlet-class>rentalServer.car.controller.CarInfoByCarNum</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CarInfoByCarNum</servlet-name>
+		<url-pattern>/CarInfoByCarNum</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>FindCarList</servlet-name>
+		<servlet-class>rentalServer.car.controller.FindCarList</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>FindCarList</servlet-name>
+		<url-pattern>/FindCarList</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>CreateResAction</servlet-name>
+		<servlet-class>rentalServer.car.controller.CreateResAction</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CreateResAction</servlet-name>
+		<url-pattern>/CreateResAction</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>UpdateResAction</servlet-name>
+		<servlet-class>rentalServer.car.controller.UpdateResAction</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UpdateResAction</servlet-name>
+		<url-pattern>/UpdateResAction</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>UpdateCarInfoCarNum</servlet-name>
+		<servlet-class>rentalServer.car.controller.UpdateCarInfoCarNum</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UpdateCarInfoCarNum</servlet-name>
+		<url-pattern>/UpdateCarInfoNum</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>UpdateRes</servlet-name>
+		<servlet-class>rentalServer.car.controller.UpdateRes</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UpdateRes</servlet-name>
+		<url-pattern>/UpdateRes</url-pattern>
+	</servlet-mapping>
 </web-app>
