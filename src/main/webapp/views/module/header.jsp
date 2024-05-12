@@ -32,7 +32,7 @@
 						<li><a href="/joinForm">회원가입</a></li>
 					</c:when>
 					<c:when test="${user != null }">
-						<li><a href="/myPage">마이페이지</a></li>
+						<li><a href="/MyPageAction?user=${user.id }">마이페이지</a></li>
 						<li>${user.name}님로그인중</li>
 					</c:when>
 				</c:choose>

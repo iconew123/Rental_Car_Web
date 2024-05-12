@@ -114,7 +114,7 @@ h1 {
 	margin: 0 -20px;
 }
 
-.car-list > h1{
+.car-list>h1 {
 	margin: auto;
 }
 
@@ -172,4 +172,99 @@ h1 {
 #d>button {
 	min-width: 100px;
 	min-height: 50px;
+}
+
+<!--
+-->
+.reservation-form {
+	max-width: 600px;
+	margin: 20px auto;
+	padding: 20px;
+	border: 1px solid #ccc;
+	border-radius: 10px;
+	background-color: #f9f9f9;
+}
+
+.info-form {
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+.info-form img {
+	width: 200px;
+	height: auto;
+	border-radius: 10px;
+	margin-bottom: 10px;
+}
+
+.info-form h2 {
+	font-size: 24px;
+	margin-bottom: 10px;
+}
+
+.info-form p {
+	margin: 5px 0;
+}
+
+#date-form {
+	margin-bottom: 20px;
+}
+
+label {
+	font-weight: bold;
+	margin-right: 10px;
+}
+
+input[type="date"] {
+	padding: 10px;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+	width: calc(100% - 22px);
+}
+
+#result-wrapper {
+	margin-top: 20px;
+}
+
+.correct, .incorrect {
+	margin: 5px 0;
+	font-weight: bold;
+}
+
+.correct {
+	color: green;
+}
+
+.incorrect {
+	color: red;
+}
+
+<!--
+-->
+#root {
+	width: 80%;
+	margin: 0 auto;
+	padding: 20px;
+}
+
+.reservation-item {
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	padding: 10px;
+	margin-bottom: 20px;
+}
+
+.car-name {
+	font-weight: bold;
+	font-size: 18px;
+	margin-bottom: 5px;
+}
+
+.reservation-period {
+	margin-bottom: 5px;
+}
+
+.btn-container {
+	display: flex;
+	justify-content: space-between;
 }

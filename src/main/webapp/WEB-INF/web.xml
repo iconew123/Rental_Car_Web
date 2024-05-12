@@ -110,6 +110,15 @@
 	</servlet-mapping>
 
 	<servlet>
+		<servlet-name>updateCar</servlet-name>
+		<jsp-file>/views/car/updateCar.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>updateCar</servlet-name>
+		<url-pattern>/updateCar</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
 		<servlet-name>errorLogin</servlet-name>
 		<jsp-file>/views/error/errorPageLogin.jsp</jsp-file>
 	</servlet>
@@ -117,6 +126,26 @@
 		<servlet-name>errorLogin</servlet-name>
 		<url-pattern>/errorPageLogin</url-pattern>
 	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>errorFailRes</servlet-name>
+		<jsp-file>/views/error/errorFailRes.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>errorFailRes</servlet-name>
+		<url-pattern>/errorFailRes</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>errLoadMyPage</servlet-name>
+		<jsp-file>/views/error/errLoadMyPage.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>errLoadMyPage</servlet-name>
+		<url-pattern>/errLoadMyPage</url-pattern>
+	</servlet-mapping>
+
+
 
 	<!-- Servlet Mapping -->
 	<servlet>
@@ -163,6 +192,16 @@
 		<servlet-name>deleteFormAction</servlet-name>
 		<url-pattern>/deleteFormAction</url-pattern>
 	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>MyPageAction</servlet-name>
+		<servlet-class>rentalServer.user.controller.MyPageAction</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>MyPageAction</servlet-name>
+		<url-pattern>/MyPageAction</url-pattern>
+	</servlet-mapping>
+
 
 	<servlet>
 		<servlet-name>BoardListAction</servlet-name>
@@ -243,5 +282,41 @@
 	<servlet-mapping>
 		<servlet-name>FindCarList</servlet-name>
 		<url-pattern>/FindCarList</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>CreateResAction</servlet-name>
+		<servlet-class>rentalServer.car.controller.CreateResAction</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CreateResAction</servlet-name>
+		<url-pattern>/CreateResAction</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>UpdateResAction</servlet-name>
+		<servlet-class>rentalServer.car.controller.UpdateResAction</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UpdateResAction</servlet-name>
+		<url-pattern>/UpdateResAction</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>UpdateCarInfoCarNum</servlet-name>
+		<servlet-class>rentalServer.car.controller.UpdateCarInfoCarNum</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UpdateCarInfoCarNum</servlet-name>
+		<url-pattern>/UpdateCarInfoNum</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>UpdateRes</servlet-name>
+		<servlet-class>rentalServer.car.controller.UpdateRes</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UpdateRes</servlet-name>
+		<url-pattern>/UpdateRes</url-pattern>
 	</servlet-mapping>
 </web-app>

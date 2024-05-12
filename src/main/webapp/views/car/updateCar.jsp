@@ -27,8 +27,12 @@
 				</c:when>
 			</c:choose>
 		</div>
-		<form method="POST" action="/CreateResAction">
+		<form method="POST" action="/UpdateRes">
 			<div id="date-form">
+				<p>${resDay.startDate }</p>
+				<p>${resDay.endDate }</p>
+				<input type="hidden" id="myStart" name="myStart" value="${resDay.startDate }">
+				<input type="hidden" id="myEnd" name="myEnd" value="${resDay.endDate }">
 				<input type="hidden" id="userid" name="userid" value="${user.id }">
 				<input type="hidden" id="carCode" name="carCode"  value="${carInfo.code}">
 				<input type="hidden" id="h-startDate" value="${totalResDate.startDate }">
@@ -43,7 +47,7 @@
 				<p id="result" class="correct"></p>
 				<p class="incorrect" style="display: none;">해당 날짜는 이미 예약되어있습니다.</p>
 			</div>
-			<button class="btn">예약하기</button>
+			<button class="btn">수정하기</button>
 		</form>
 	</div>
 	<script src="k.js"></script>
